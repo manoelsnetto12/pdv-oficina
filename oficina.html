@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>PDV Oficina PRO</title>
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+}
+
+.lista {
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>PDV Oficina PRO</h1>
+
+  <div class="card">
+    <input id="cliente" placeholder="Nome do Cliente">
+    <input id="servico" placeholder="Serviço realizado">
+    <input id="valor" placeholder="Valor">
+
+    <button onclick="adicionar()">Cadastrar OS</button>
+
+    <div class="lista" id="lista"></div>
+  </div>
+</div>
+
+<script>
+function adicionar() {
+  const cliente = document.getElementById('cliente').value;
+  const servico = document.getElementById('servico').value;
+  const valor = document.getElementById('valor').value;
+
+  const div = document.createElement('div');
+  div.style.marginTop = "10px";
+  div.innerHTML = `👤 ${cliente} | 🔧 ${servico} | 💰 R$ ${valor}`;
+
+  document.getElementById('lista').appendChild(div);
+}
+</script>
+
+</body>
+</html>
